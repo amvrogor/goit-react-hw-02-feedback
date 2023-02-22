@@ -12,4 +12,5 @@ export const Title = ({ title, children }) => {
 
 Title.propTypes = {
   title: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired,
 };
