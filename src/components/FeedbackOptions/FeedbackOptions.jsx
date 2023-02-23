@@ -4,33 +4,11 @@ import { Container, Button } from './FeedbackOptions.styled';
 export const FeedbackOptions = ({ options, onLeaveFeedback }) => {
   return (
     <Container>
-      <Button
-        onClick={() =>
-          options.map(
-            option => option === options[0] && onLeaveFeedback(option)
-          )
-        }
-      >
-        {options[0]}
-      </Button>
-      <Button
-        onClick={() =>
-          options.map(
-            option => option === options[1] && onLeaveFeedback(option)
-          )
-        }
-      >
-        {options[1]}
-      </Button>
-      <Button
-        onClick={() =>
-          options.map(
-            option => option === options[2] && onLeaveFeedback(option)
-          )
-        }
-      >
-        {options[2]}
-      </Button>
+      {options.map(option => (
+        <Button key={option} onClick={() => onLeaveFeedback(option)}>
+          {option}
+        </Button>
+      ))}
     </Container>
   );
 };
